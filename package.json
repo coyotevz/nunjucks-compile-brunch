@@ -1,0 +1,29 @@
+{
+  "name": "nunjucks-compile-brunch",
+  "version": "0.0.1",
+  "description": "Adds nunjucks support to Brunch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/coyotevz/nunjucks-compile-brunch.git"
+  },
+  "keywords": [
+    "brunch",
+    "brunch-plugin",
+    "nunjucks",
+    "template",
+    "render"
+  ],
+  "author": "Augusto Roccasalva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coyotevz/nunjucks-compile-brunch/issues"
+  },
+  "homepage": "https://github.com/coyotevz/nunjucks-compile-brunch#readme",
+  "dependencies": {
+    "nunjucks": "^2.2.0"
+  }
+}
