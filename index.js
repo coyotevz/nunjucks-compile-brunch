@@ -9,7 +9,9 @@ var extend = function(object, source) {
 };
 
 function NunjucksCompiler(config) {
-  this.config = config;
+  if (config == null) config = {};
+  var nunjucks = config.plugins && config.plugins.nunjucks;
+  this.config = (nunjucks && nunjucks.options) || nunjucks;
   this.configure();
 };
 
@@ -20,13 +22,7 @@ NunjucksCompiler.prototype = extend(NunjucksCompiler.prototype, {
   templatePath: 'app/templates/',
 
   configure: function() {
-    var options;
-    if ((this.config.plugins != null) &&
-        (this.config.plugins.nunjucks != null) ) {
-      options = this.config.plugins.nunjucks;
-    } else {
-      options = {};
-    }
+    var options = this.config || {};
     if (options.templatePath != null) {
       this.templatePath = options.templatePath;
     }
