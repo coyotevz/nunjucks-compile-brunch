@@ -41,10 +41,7 @@ NunjucksCompiler.prototype = extend(NunjucksCompiler.prototype, {
   compile: function(data, path, callback) {
     var error, filename, result;
     try {
-      //var name = path.replace(/^app\//, '').split(".")[0];
-      console.log('path:', path);
       var name = path.replace(this.templatePath, '');
-      console.log('compiling:', name);
       result = nunjucks.precompile(path, {name: name});
     } catch (err) {
       return error = err;
