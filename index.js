@@ -21,7 +21,7 @@ NunjucksCompiler.prototype = extend(NunjucksCompiler.prototype, {
 
   configure: function() {
     var options = this.config || {};
-    if (options.templatePath !== null) {
+    if (options.templatePath !== undefined) {
       this.templatePath = options.templatePath;
     }
   },
@@ -30,7 +30,6 @@ NunjucksCompiler.prototype = extend(NunjucksCompiler.prototype, {
     var match = data.match(/extends '([a-zA-Z\/]*)'/i);
     var dependencies = [];
     if (match && match[1]) {
-      //dependencies.push("app/" + match[1] + '.html');
       dependencies.push(this.templatePath + match[1]);
     }
     callback(null, dependencies);
